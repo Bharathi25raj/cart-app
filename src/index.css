@@ -77,6 +77,14 @@ code {
   cursor: pointer;
 }
 
+.addToCartBtn:hover{
+  background-color: green;
+}
+
+.removeFromCartBtn:hover{
+  background-color: red;
+}
+
 .products{
   display: flex;
   justify-content: space-evenly;
