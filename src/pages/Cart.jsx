@@ -1,7 +1,9 @@
+import { ProductContext } from "../components/ProductContext";
+import { useContext } from "react";
 
+function Cart() {
 
-function Cart({ items , setItems, count, setCount}){
-
+    const { items , setItems, count, setCount } = useContext(ProductContext);
    
     if(items.length === 0){
         return <></>;

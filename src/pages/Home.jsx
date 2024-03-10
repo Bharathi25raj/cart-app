@@ -1,11 +1,14 @@
 import ProductCard from "../components/ProductCard";
+import { ProductContext } from "../components/ProductContext";
+import { useContext } from "react";
 
-function Home({products, handleAddToCart}){
+function Home(){
+
+    const { products, handleAddToCart } = useContext(ProductContext);
 
     return (
         <>
-            <ProductCard products={products}
-                         handleAddToCart={handleAddToCart} />
+            <ProductCard />
         </>
     )
 }

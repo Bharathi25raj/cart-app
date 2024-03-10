@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useEffect } from 'react';
 import axios from 'axios';
+import { ProductContext } from './components/ProductContext';
 
 function App() {
 
@@ -43,15 +44,13 @@ function App() {
     <>
       
       <BrowserRouter>
-        <NavBar count={count}/>
-        <Routes>
-          <Route path="/" element={<Home products={products}
-                                        handleAddToCart={handleAddToCart}/>}></Route>
-          <Route path="/cart" element={<Cart items={items} 
-                                            setItems={setItems}
-                                            count={count}
-                                            setCount={setCount}/>}></Route>
-        </Routes>
+        <ProductContext.Provider value={{products, handleAddToCart, items, setItems, count, setCount}}>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/cart" element={<Cart />}></Route>
+          </Routes>
+        </ProductContext.Provider>
       </BrowserRouter>
     </>
   );

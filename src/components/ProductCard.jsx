@@ -1,5 +1,11 @@
+import { ProductContext } from "./ProductContext"
+import { useContext } from "react"
 
-export default function ProductCard({products, handleAddToCart}){    
+
+
+export default function ProductCard(){    
+
+    const {products, handleAddToCart} = useContext(ProductContext);
 
     if(products.length === 0){
         return (

@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ProductContext } from "./ProductContext";
+import { useContext } from "react";
 
 
 
+function NavBar(){
 
-function NavBar({count}){
+    const { count } = useContext(ProductContext);
+
     return (
          <div className="navbar">
             <span>Redux Store</span>
