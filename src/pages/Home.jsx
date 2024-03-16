@@ -4,7 +4,7 @@ import { useContext } from "react";
 
 function Home(){
 
-    const { products, handleAddToCart } = useContext(ProductContext);
+    // const { products, handleAddToCart } = useContext(ProductContext);
 
     return (
         <>
